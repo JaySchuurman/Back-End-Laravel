@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\MessagesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,6 +41,17 @@ Route::put('/products/{product}', [ProductsController::class, 'update'])->name('
 
 // Delete a product
 Route::delete('/products/{product}', [ProductsController::class, 'destroy'])->name('product.destroy');
+
+
+Route::middleware('auth')->group(function () {
+
+Route::get('/messages', [MessagesController::class, 'index'])->name('messages.index');
+});
+
+Route::get('/messages/create', [MessagesController::class, 'create'])->name('messages.create');
+
+Route::post('/messages', [MessagesController::class, 'store'])->name('messages.store');
+
 
 
 
