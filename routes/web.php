@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\OrdersController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,7 +53,9 @@ Route::get('/messages/create', [MessagesController::class, 'create'])->name('mes
 
 Route::post('/messages', [MessagesController::class, 'store'])->name('messages.store');
 
+// Route::resource('post', 'OrdersController');
 
+Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
 
 
 require __DIR__.'/auth.php';
