@@ -3,6 +3,7 @@ namespace App\Models;
  
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+Use app\Models\Products;
  
 class OrderItem extends Model
 {
@@ -22,6 +23,6 @@ class OrderItem extends Model
     // Relatie met product
     public function product(): BelongsTo
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Products::class);
     }
 }

@@ -57,5 +57,7 @@ Route::post('/messages', [MessagesController::class, 'store'])->name('messages.s
 
 Route::get('/orders', [OrdersController::class, 'index'])->name('orders.index');
 
+Route::get('/orders/create', [OrdersController::class, 'create'])->name('orders.create');
+Route::post('/orders', [OrdersController::class, 'store'])->name('orders.store');
 
 require __DIR__.'/auth.php';
