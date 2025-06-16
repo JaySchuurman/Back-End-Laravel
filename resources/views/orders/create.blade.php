@@ -1,42 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Create Order</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f7fa;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-            color: #333;
-        }
+<x-app-layout>
+    <x-slot name="header">
+        <h1 class="text-center text-gray-800 dark:text-gray-200 text-2xl font-semibold">Create an Order</h1>
+    </x-slot>
 
+    <style>
         .container {
             background: #fff;
             padding: 30px 40px;
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            width: 100%;
             max-width: 500px;
+            margin: 0 auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
         }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
         label {
             display: block;
             font-weight: 600;
             margin-bottom: 8px;
             color: #34495e;
         }
-
         input[type="text"] {
             width: 100%;
             padding: 10px 12px;
@@ -45,12 +28,10 @@
             font-size: 1rem;
             transition: border-color 0.3s ease;
         }
-
         input[type="text"]:focus {
             border-color: #3498db;
             outline: none;
         }
-
         .products-list {
             margin-top: 20px;
             max-height: 250px;
@@ -60,36 +41,30 @@
             border-radius: 8px;
             background: #fafafa;
         }
-
         .products-list div {
             margin-bottom: 12px;
             display: flex;
             align-items: center;
         }
-
         .products-list input[type="checkbox"] {
             margin-right: 10px;
             width: 18px;
             height: 18px;
             cursor: pointer;
         }
-
         .products-list label {
             font-weight: 500;
             cursor: pointer;
             user-select: none;
         }
-
         .products-list label:hover {
             color: #3498db;
         }
-
         .error-message {
             color: #e74c3c;
             margin-top: 5px;
             font-size: 0.9rem;
         }
-
         .flash-message {
             background-color: #d4edda;
             border: 1px solid #c3e6cb;
@@ -100,7 +75,6 @@
             font-weight: 600;
             text-align: center;
         }
-
         button[type="submit"] {
             width: 100%;
             background-color: #3498db;
@@ -115,16 +89,12 @@
             margin-top: 30px;
             letter-spacing: 1px;
         }
-
         button[type="submit"]:hover {
             background-color: #2980b9;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Create an Order</h1>
 
+    <div class="container">
         @if(session('success'))
             <div class="flash-message">
                 {{ session('success') }}
@@ -171,5 +141,4 @@
             <button type="submit">Place Order</button>
         </form>
     </div>
-</body>
-</html>
+</x-app-layout>

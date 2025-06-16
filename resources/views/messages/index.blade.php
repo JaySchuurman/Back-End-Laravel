@@ -1,70 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
+<x-app-layout>
+    <x-slot name="header">
+        <h1 class="text-center text-gray-800 dark:text-gray-200 text-2xl font-semibold">Messages</h1>
+    </x-slot>
+
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        padding: 40px;
-        color: #333;
-    }
+        .flash-message {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
 
-    h1 {
-        text-align: center;
-        color: #444;
-    }
+        .error-message {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
 
-    .flash-message {
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        color: #155724;
-        padding: 10px 15px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        width: 100%;
-        max-width: 600px;
-        margin: 20px auto;
-    }
+        .messages-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    .error-message {
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-        color: #721c24;
-        padding: 10px 15px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        width: 100%;
-        max-width: 600px;
-        margin: 20px auto;
-    }
+        .message {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
 
-    .messages-container {
-        max-width: 600px;
-        margin: 0 auto;
-    }
+        .message h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
 
-    .message {
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
-
-    .message h3 {
-        margin-top: 0;
-        color: #007bff;
-    }
-
-    .message p {
-        margin-bottom: 0;
-    }
-</style>
-
-</head>
-<body>
-
-    <h1>Messages</h1>
+        .message p {
+            margin-bottom: 0;
+        }
+    </style>
 
     @if (session('message'))
         <div class="flash-message">
@@ -92,6 +75,4 @@
             @endforeach
         </div>
     @endisset
-
-</body>
-</html>
+</x-app-layout>

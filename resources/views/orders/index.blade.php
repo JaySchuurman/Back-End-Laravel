@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
+<x-app-layout>
+    <x-slot name="header">
+        <h1 class="text-center text-gray-800 dark:text-gray-200 text-2xl font-semibold">Orders</h1>
+    </x-slot>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 40px;
-            color: #333;
-        }
-
-        h1 {
-            text-align: center;
-            color: #444;
-        }
-
         .flash-message {
             background-color: #d4edda;
             border: 1px solid #c3e6cb;
@@ -21,9 +11,9 @@
             padding: 10px 15px;
             margin-bottom: 20px;
             border-radius: 5px;
-            width: 100%;
             max-width: 800px;
-            margin: 20px auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .error-message {
@@ -33,9 +23,9 @@
             padding: 10px 15px;
             margin-bottom: 20px;
             border-radius: 5px;
-            width: 100%;
             max-width: 800px;
-            margin: 20px auto;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .orders-container {
@@ -65,10 +55,6 @@
             padding-left: 20px;
         }
     </style>
-</head>
-<body>
-
-    <h1>Orders</h1>
 
     @if (session('message'))
         <div class="flash-message">
@@ -103,8 +89,7 @@
             @endforeach
         </div>
     @else
-        <p>No orders found.</p>
+        <p class="text-center">No orders found.</p>
     @endisset
 
-</body>
-</html>
+</x-app-layout>

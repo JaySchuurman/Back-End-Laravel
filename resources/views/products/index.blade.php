@@ -1,80 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
+<x-app-layout>
+    <x-slot name="header">
+        <h1 class="text-center text-gray-800 dark:text-gray-200 text-2xl font-semibold">Products</h1>
+    </x-slot>
+
     <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 40px;
-        color: #333;
-    }
+        .product-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    h1 {
-        text-align: center;
-        color: #2c3e50;
-        margin-bottom: 30px;
-    }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-    .product-list {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+        .product-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
 
-    .product-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+        .product-card p {
+            margin: 5px 0;
+        }
 
-    .product-card h3 {
-        margin-top: 0;
-        color: #007bff;
-    }
+        .product-card a,
+        .product-card button {
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 8px 14px;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
-    .product-card p {
-        margin: 5px 0;
-    }
+        .product-card a {
+            background-color: #17a2b8;
+            color: #fff;
+        }
 
-    .product-card a,
-    .product-card button {
-        display: inline-block;
-        margin-top: 10px;
-        margin-right: 10px;
-        padding: 8px 14px;
-        text-decoration: none;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
-        cursor: pointer;
-    }
+        .product-card button {
+            background-color: #dc3545;
+            color: #fff;
+        }
 
-    .product-card a {
-        background-color: #17a2b8;
-        color: #fff;
-    }
+        .product-card a:hover {
+            background-color: #138496;
+        }
 
-    .product-card button {
-        background-color: #dc3545;
-        color: #fff;
-    }
-
-    .product-card a:hover {
-        background-color: #138496;
-    }
-
-    .product-card button:hover {
-        background-color: #c82333;
-    }
-</style>
-
-</head>
-<body>
-
-    <h1>Products</h1>
+        .product-card button:hover {
+            background-color: #c82333;
+        }
+    </style>
 
     <div class="product-list">
         @foreach ($products as $product)
@@ -112,7 +95,4 @@
             });
         }
     </script>
-
-</body>
-
-</html>
+</x-app-layout>
